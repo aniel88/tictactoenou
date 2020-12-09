@@ -47,10 +47,12 @@ function makeUnclickable() {
 one.addEventListener("click", function () {
   if (one.textContent === "" && player === 1) {
     one.textContent = "X";
+    checkWinner();
     player = 2;
     start = 1;
   } else if (one.textContent === "" && player === 2) {
     one.textContent = "O";
+    checkWinner();
     player = 1;
     start = 1;
   }
@@ -59,108 +61,120 @@ two.addEventListener("click", function () {
   if (two.textContent === "" && player === 1) {
     two.textContent = "X";
     player = 2;
-    checkWinner();
     start = 1;
   } else if (two.textContent === "" && player === 2) {
     two.textContent = "O";
+    checkWinner();
     player = 1;
     start = 1;
-    checkWinner();
   }
 });
 three.addEventListener("click", function () {
   if (three.textContent === "" && player === 1) {
     three.textContent = "X";
-    player = 2;
     checkWinner();
+    player = 2;
     start = 1;
   } else if (three.textContent === "" && player === 2) {
     three.textContent = "O";
-    player = 1;
     checkWinner();
+    player = 1;
     start = 1;
   }
 });
 four.addEventListener("click", function () {
   if (four.textContent === "" && player === 1) {
     four.textContent = "X";
-    player = 2;
     checkWinner();
+    player = 2;
     start = 1;
   } else if (four.textContent === "" && player === 2) {
     four.textContent = "O";
-    player = 1;
     checkWinner();
+    player = 1;
     start = 1;
   }
 });
 five.addEventListener("click", function () {
   if (five.textContent === "" && player === 1) {
     five.textContent = "X";
+    checkWinner();
     player = 2;
     start = 1;
-    checkWinner();
   } else if (five.textContent === "" && player === 2) {
     five.textContent = "O";
-    player = 1;
     checkWinner();
+    player = 1;
     start = 1;
   }
 });
 six.addEventListener("click", function () {
   if (six.textContent === "" && player === 1) {
     six.textContent = "X";
+    checkWinner();
     player = 2;
     start = 1;
-    checkWinner();
   } else if (six.textContent === "" && player === 2) {
     six.textContent = "O";
-    player = 1;
     checkWinner();
+    player = 1;
     start = 1;
   }
 });
 seven.addEventListener("click", function () {
   if (seven.textContent === "" && player === 1) {
+    checkWinner();
     seven.textContent = "X";
     player = 2;
     start = 1;
-    checkWinner();
   } else if (seven.textContent === "" && player === 2) {
     seven.textContent = "O";
-    player = 1;
     checkWinner();
+    player = 1;
     start = 1;
   }
 });
 eight.addEventListener("click", function () {
   if (eight.textContent === "" && player === 1) {
     eight.textContent = "X";
+    checkWinner();
     player = 2;
     start = 1;
-    checkWinner();
   } else if (eight.textContent === "" && player === 2) {
     eight.textContent = "O";
+    checkWinner();
     player = 1;
     start = 1;
-    checkWinner();
   }
 });
 nine.addEventListener("click", function () {
   if (nine.textContent === "" && player === 1) {
     nine.textContent = "X";
+    checkWinner();
     player = 2;
     start = 1;
-    checkWinner();
   } else if (nine.textContent === "" && player === 2) {
     nine.textContent = "O";
+    checkWinner();
     player = 1;
     start = 1;
-    checkWinner();
   }
 });
 let showPlayerWin = document.querySelector(".show-player-win");
 function checkWinner() {
+  if (one.textContent !== "")
+    if (two.textContent !== "")
+      if (three.textContent !== "")
+        if (four.textContent !== "")
+          if (five.textContent !== "")
+            if (six.textContent !== "")
+              if (seven.textContent !== "")
+                if (eight.textContent !== "")
+                  if (nine.textContent !== "") {
+                    write.textContent = "No one wins!";
+                    showPlayerWin.style.display = "flex";
+                    makeUnclickable();
+                  }
   if (one.textContent == "X")
     if (two.textContent == "X")
       if (three.textContent == "X") {
@@ -273,19 +287,6 @@ function checkWinner() {
         showPlayerWin.style.display = "flex";
         makeUnclickable();
       }
-  if (one.textContent !== "")
-    if (two.textContent !== "")
-      if (three.textContent !== "")
-        if (four.textContent !== "")
-          if (five.textContent !== "")
-            if (six.textContent !== "")
-              if (seven.textContent !== "")
-                if (eight.textContent !== "")
-                  if (nine.textContent !== "") {
-                    write.textContent = "No one wins!";
-                    showPlayerWin.style.display = "flex";
-                    makeUnclickable();
-                  }
 }
 let selectButton1 = document.getElementById("select-button1");
 let selectButton2 = document.getElementById("select-button2");
